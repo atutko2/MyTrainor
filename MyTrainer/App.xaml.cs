@@ -36,7 +36,7 @@ namespace MyTrainer
 
         private void FillAllExercises()
         {
-            string filename = "MyTrainer.exercises.json";
+            string filename = "MyTrainer.Resources.exercises.json";
             var assembly = Assembly.GetExecutingAssembly();
             string jsonText;
 

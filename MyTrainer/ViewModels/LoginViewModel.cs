@@ -33,26 +33,19 @@ namespace MyTrainer.ViewModels
 
         private async void Login()
         {
-            // get the salt from the database
-            //byte[] salt = new byte[SALT_SIZE];
-            //// temp value
-            //salt = Encoding.GetEncoding("UTF-8").GetBytes("aaaaaaaaaaaaaaaaaaaaaaaaaa");
-
-            // use the password provided and the salt to generate hash
-            //Rfc2898DeriveBytes pbkdf2 = new Rfc2898DeriveBytes(Password, salt, ITERATIONS);
-            //var hash = Convert.ToBase64String(pbkdf2.GetBytes(HASH_SIZE));
-
-            //Console.WriteLine(hash);
-            // verify the hash is congruent with the database
-
-            // Move the person to the main page and display user information
-
+            // Have the user sign into firebase
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(WebAPIKey));
             try
             {
+                
+                
+                // To DO:
+                // Before calling to the database, sanitize input
 
-                // To Do: Sanitize input
+                // Verify the correct information was provided
                 var auth = await authProvider.SignInWithEmailAndPasswordAsync(Username, Password);
+
+                // Serialize the token for one time sign in
                 var content = await auth.GetFreshAuthAsync();
                 var serializedContent = Newtonsoft.Json.JsonConvert.SerializeObject(content);
                 Xamarin.Essentials.Preferences.Set("MyFirebaseRefreshToken", serializedContent);

@@ -33,9 +33,20 @@ namespace MyTrainer.ViewModels
             {
                 try
                 {
+
+                    // To Do:
+                    // Sanitize input before creating account
+
+                    // To Do:
+                    // Make sure passwords match
+
                     var authProvider = new FirebaseAuthProvider(new FirebaseConfig(WebAPIKey));
                     var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Email, Password);
                     string gettoken = auth.FirebaseToken;
+
+                    // To Do:
+                    // Move the user to the next step in the signup process
+
                     await App.Current.MainPage.DisplayAlert("Alert", gettoken, "Ok");
                 }
                 catch (Exception ex)

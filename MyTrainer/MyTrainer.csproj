@@ -26,16 +26,18 @@
     <None Remove="Firebase.Auth" />
     <None Remove="FirebaseAuthentication.net" />
     <None Remove="System.Text.Json" />
-    <None Remove="exercises.json" />
     <None Remove="StaticClasses\" />
+    <None Remove="Resources\" />
+    <None Remove="Resources\exercises.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Models\" />
     <Folder Include="StaticClasses\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="exercises.json" />
+    <EmbeddedResource Include="Resources\exercises.json" />
   </ItemGroup>
 </Project>
