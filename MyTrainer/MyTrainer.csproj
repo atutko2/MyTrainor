@@ -11,10 +11,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
+    <PackageReference Include="System.Text.Json" Version="6.0.5" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="MahApps.Metro.IconPacks.FontAwesome" />
+    <None Remove="Views\" />
+    <None Remove="ViewModels\" />
+    <None Remove="Models\" />
+    <None Remove="FirebaseAuth" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Firebase.Auth" />
+    <None Remove="FirebaseAuthentication.net" />
+    <None Remove="System.Text.Json" />
+    <None Remove="exercises.json" />
+    <None Remove="StaticClasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
+    <Folder Include="StaticClasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="exercises.json" />
   </ItemGroup>
 </Project>

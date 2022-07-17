@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MyTrainer.StaticClasses"
+    x:Class="MyTrainer.Views.ExercisesPage">
+    <ContentPage.Content>
+        <Grid ColumnDefinitions="Auto">
+            <CollectionView ItemsSource="{x:Static local:Globals.AllExercises}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            ColumnDefinitions="Auto,Auto,Auto"
+                            RowDefinitions="Auto">
+
+                            <Label Text="{Binding Name}"
+                                    Grid.Column="0"
+                                    WidthRequest="200"></Label>
+                            <Label Text="{Binding Force}"
+                                   Grid.Column="1"></Label>
+                            <Label Text="{Binding PrimaryMuscles}"
+                                   Grid.Column="1"></Label>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+

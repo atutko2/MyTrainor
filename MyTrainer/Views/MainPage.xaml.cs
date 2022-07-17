@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace MyTrainer
+namespace MyTrainer.Views
 {
     public partial class MainPage : TabbedPage
     {

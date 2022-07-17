@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyTrainer.Views.LoginPage"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+                <Frame BackgroundColor="#557A95" Padding="45" CornerRadius="0">
+                    <Label Text="MyTrainer" TextColor="White" HorizontalTextAlignment="Center" FontSize="24"></Label>
+                </Frame>
+
+                <Entry Placeholder="Username" HorizontalOptions="Center" HeightRequest="50"
+                   WidthRequest="250" VerticalOptions="Center" Margin="0, 70, 0, 10"
+                   Text="{Binding Username}">
+                        <Entry.Keyboard>
+                          <Keyboard x:FactoryMethod="Create">
+                             <x:Arguments>
+                               <KeyboardFlags>None</KeyboardFlags>
+                                  </x:Arguments>
+                               </Keyboard>
+                          </Entry.Keyboard>
+                </Entry>
+                <Entry Placeholder="Password" HorizontalOptions="Center" HeightRequest="50"
+                   WidthRequest="250" VerticalOptions="Center" Margin="0, 0, 0, 10"
+                   Text="{Binding Password}" IsPassword="True">
+                         <Entry.Keyboard>
+                          <Keyboard x:FactoryMethod="Create">
+                             <x:Arguments>
+                               <KeyboardFlags>None</KeyboardFlags>
+                                  </x:Arguments>
+                               </Keyboard>
+                          </Entry.Keyboard>
+                </Entry>
+
+                <Button Text="Sign In" HorizontalOptions="Center" BackgroundColor="#7395AE"
+                        TextColor="White" HeightRequest="50" WidthRequest="250"
+                        VerticalOptions="Center" Margin="5" CornerRadius="10"
+                        Command="{Binding LoginCommand}"></Button>
+
+                <Button Text="Create Account" HorizontalOptions="Center" BackgroundColor="#7395AE"
+                        TextColor="White" HeightRequest="50" WidthRequest="250"
+                        VerticalOptions="Center" Margin="5" CornerRadius="10"
+                        Command="{Binding SignUpCommand}"></Button>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
