@@ -21,20 +21,22 @@ namespace MyTrainer.ViewModels
 
         private void CreateWorkoutPlan()
         {
-            //string filename = "MyTrainer.Resources.exercises.json";
-            //var assembly = Assembly.GetExecutingAssembly();
-            //string jsonText;
+            string filename = "MyTrainer.Resources.Levels.expert.json";
+            var assembly = Assembly.GetExecutingAssembly();
+            string jsonText;
 
 
-            //using (Stream stream = assembly.GetManifestResourceStream(filename))
-            //using (StreamReader reader = new StreamReader(stream))
-            //{
-            //    string result = reader.ReadToEnd();
-            //    jsonText = result;
-            //}
+            using (Stream stream = assembly.GetManifestResourceStream(filename))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                string result = reader.ReadToEnd();
+                jsonText = result;
+            }
 
 
-            //Globals.AllExercises = JsonConvert.DeserializeObject<Exercises>(jsonText).exercises;
+            var tmp = JsonConvert.DeserializeObject<Dictionary<int, Exercise>>(jsonText);
+
+            Console.WriteLine(tmp[0].Level);
 
         }
     }
