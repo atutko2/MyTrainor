@@ -5,12 +5,23 @@
     x:Class="MyTrainer.Views.TodayPage"
     Title="Today's Workout">
     <ContentPage.Content>
-        <StackLayout>
-            <Frame BackgroundColor="#246EE9" Padding="45" CornerRadius="0">
-                <Label Text="Today's Workout" TextColor="White" HorizontalTextAlignment="Center" FontSize="24"></Label>
-            </Frame>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Frame BackgroundColor="#246EE9" Padding="45" CornerRadius="0">
+                    <Label Text="Today's Workout" TextColor="White" HorizontalTextAlignment="Center" FontSize="24"></Label>
+                </Frame>
 
-        </StackLayout>
+            </StackLayout>
+
+            <StackLayout
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0.94,1.18,0.5,0.25">
+
+                <StackLayout HorizontalOptions="End" VerticalOptions="End" Margin="0,0,0,0">
+                    <Button Text="New Workout Plan" Command="{Binding NewWorkoutPlan}"></Button>
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
 

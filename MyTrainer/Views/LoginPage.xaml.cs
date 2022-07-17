@@ -1,5 +1,4 @@
-﻿using MyTrainer.ViewModels;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace MyTrainer.Views
 {
@@ -8,7 +7,7 @@ namespace MyTrainer.Views
         public LoginPage()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel();
+            BindingContext = new ViewModels.LoginViewModel();
         }
 
     }

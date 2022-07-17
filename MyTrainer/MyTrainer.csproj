@@ -29,6 +29,7 @@
     <None Remove="StaticClasses\" />
     <None Remove="Resources\" />
     <None Remove="Resources\exercises.json" />
+    <None Remove="Resources\exercises %28copy%29.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -39,5 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\exercises.json" />
+    <EmbeddedResource Include="Resources\legs.json" />
   </ItemGroup>
 </Project>

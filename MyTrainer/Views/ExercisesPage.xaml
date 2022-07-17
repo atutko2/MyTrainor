@@ -9,18 +9,18 @@
             <CollectionView ItemsSource="{x:Static local:Globals.AllExercises}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid
-                            ColumnDefinitions="Auto,Auto,Auto"
-                            RowDefinitions="Auto">
+                        <Frame>
+                            <Grid
+                                ColumnDefinitions="Auto,Auto,Auto"
+                                RowDefinitions="Auto">
 
-                            <Label Text="{Binding Name}"
-                                    Grid.Column="0"
-                                    WidthRequest="200"></Label>
-                            <Label Text="{Binding Force}"
-                                   Grid.Column="1"></Label>
-                            <Label Text="{Binding PrimaryMuscles}"
-                                   Grid.Column="1"></Label>
-                        </Grid>
+                                <Label Text="{Binding Name}"
+                                        Grid.Column="0"
+                                        WidthRequest="200"></Label>
+                                <Label Text="{Binding Force}"
+                                       Grid.Column="1"></Label>
+                            </Grid>
+                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

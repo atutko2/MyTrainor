@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace MyTrainer.Views
 {
@@ -10,6 +7,7 @@ namespace MyTrainer.Views
         public TodayPage()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.TodaysPageViewModel();
         }
     }
 }

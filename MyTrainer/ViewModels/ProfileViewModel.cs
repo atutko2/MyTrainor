@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
 using System.Windows.Input;
 using Firebase.Auth;
-using MyTrainer.Models;
-using MyTrainer.StaticClasses;
 using MyTrainer.Views;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
@@ -24,13 +19,16 @@ namespace MyTrainer.ViewModels
         private const string WebAPIKey = "AIzaSyA-md17IbC9MAZ50g5vUl5V1FsTUd6U0uw";
         private string email { get; set; }
 
+        // Constructor
         public ProfileViewModel()
         {
+            // Refreshs token and defines my commands
             GetProfileInformationAndRefreshToken();
             LogoutCommand = new Command(Logout);
             ShowExercises = new Command(GetAllExercises);
         }
 
+        // Display excercises page
         async private void GetAllExercises()
         {
 
@@ -38,12 +36,14 @@ namespace MyTrainer.ViewModels
 
         }
 
+        // Log the user out
         private void Logout()
         {
             Preferences.Remove("MyFirebaseRefreshToken");
             App.Current.MainPage = new NavigationPage(new LoginPage());
         }
 
+        // Retrieves users information from the DB and refreshs the token
         private async void GetProfileInformationAndRefreshToken()
         {
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(WebAPIKey));
