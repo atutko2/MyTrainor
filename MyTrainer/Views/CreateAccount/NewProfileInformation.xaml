@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MyTrainer.Views.CreateAccount.NewProfileInformation">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#557A95" Padding="45" CornerRadius="0">
+                <Label Text="MyTrainer" TextColor="White" HorizontalTextAlignment="Center" FontSize="24"></Label>
+            </Frame>
+
+            <Entry Placeholder="First Name" HorizontalOptions="Center" HeightRequest="50"
+                   WidthRequest="250" VerticalOptions="Center" Margin="0, 0, 0, 10"
+                   Text="{Binding MyProfile.FirstName}">
+                <Entry.Keyboard>
+                    <Keyboard x:FactoryMethod="Create">
+                        <x:Arguments>
+                            <KeyboardFlags>None</KeyboardFlags>
+                        </x:Arguments>
+                    </Keyboard>
+                </Entry.Keyboard>
+            </Entry>
+
+            <Entry Placeholder="Last Name" HorizontalOptions="Center" HeightRequest="50"
+                   WidthRequest="250" VerticalOptions="Center" Margin="0, 0, 0, 10"
+                   Text="{Binding MyProfile.LastName}">
+                <Entry.Keyboard>
+                    <Keyboard x:FactoryMethod="Create">
+                        <x:Arguments>
+                            <KeyboardFlags>None</KeyboardFlags>
+                        </x:Arguments>
+                    </Keyboard>
+                </Entry.Keyboard>
+            </Entry>
+
+            <Picker
+                Title="Experience Level"
+                SelectedItem="{Binding MyProfile.ExperienceLevel}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>No Experience</x:String>
+                        <x:String>Beginner</x:String>
+                        <x:String>Novice</x:String>
+                        <x:String>Intermediate</x:String>
+                        <x:String>Advanced</x:String>
+                        <x:String>Elite</x:String>
+                        <x:String>Unsure</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker
+                Title="Goals"
+                SelectedItem="{Binding MyProfile.Goals}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Cut Fat</x:String>
+                        <x:String>Build Muscle</x:String>
+                        <x:String>Gain Strength</x:String>
+                        <x:String>General Health</x:String>
+                        <x:String>All the Above</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Create Account" HorizontalOptions="Center" BackgroundColor="#7395AE"
+                    TextColor="White" HeightRequest="50" WidthRequest="250"
+                    VerticalOptions="Center" Margin="5" CornerRadius="10"
+                    Command="{Binding CreateAccountCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

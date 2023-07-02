@@ -11,10 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
     <PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
-    <PackageReference Include="System.Text.Json" Version="6.0.5" />
+    <PackageReference Include="System.Text.Json" Version="6.0.6" />
+    <PackageReference Include="NETStandard.Library" Version="2.0.3" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="MahApps.Metro.IconPacks.FontAwesome" />
@@ -68,6 +69,9 @@
     <None Remove="Resources\Category\stretching.json" />
     <None Remove="Resources\Category\plyometrics.json" />
     <None Remove="Resources\Category\strength.json" />
+    <None Remove="NETStandard.Library" />
+    <None Remove="Views\CreateAccount\" />
+    <None Remove="ViewModels\CreateAccount\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -75,6 +79,8 @@
     <Folder Include="Models\" />
     <Folder Include="StaticClasses\" />
     <Folder Include="Resources\" />
+    <Folder Include="Views\CreateAccount\" />
+    <Folder Include="ViewModels\CreateAccount\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\exercises.json" />
@@ -116,5 +122,11 @@
     <EmbeddedResource Include="Resources\Category\stretching.json" />
     <EmbeddedResource Include="Resources\Category\plyometrics.json" />
     <EmbeddedResource Include="Resources\Category\strength.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\CreateAccount\SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

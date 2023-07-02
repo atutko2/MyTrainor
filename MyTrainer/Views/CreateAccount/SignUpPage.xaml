@@ -2,13 +2,17 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="MyTrainer.Views.SignUpPage">
+    x:Class="MyTrainer.Views.CreateAccount.SignUpPage">
     <ContentPage.Content>
         <StackLayout>
             <Frame BackgroundColor="#557A95" Padding="45" CornerRadius="0">
                 <Label Text="MyTrainer" TextColor="White" HorizontalTextAlignment="Center" FontSize="24"></Label>
             </Frame>
-            
+
+            <Frame IsVisible="{Binding UnknownError}" Padding="30" CornerRadius="0">
+                <Label Text="Unknown Error: Please Check Network Connection" TextColor="Red" IsVisible="{Binding UnknownError}"
+                   HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </Frame>
             <Entry Placeholder="Email" HorizontalOptions="Center" HeightRequest="50"
                    WidthRequest="250" VerticalOptions="Center" Margin="0, 0, 0, 10"
                    Text="{Binding Email}">
@@ -21,6 +25,9 @@
                 </Entry.Keyboard>
 
             </Entry>
+            <Label Text="Please enter a valid email address" TextColor="Red" IsVisible="{Binding BadEmail}"
+                   HorizontalOptions="Center" VerticalOptions="Center"></Label>
+
             <Entry Placeholder="Password" HorizontalOptions="Center" HeightRequest="50"
                    WidthRequest="250" VerticalOptions="Center" Margin="0, 0, 0, 10"
                    Text="{Binding Password}" IsPassword="True">
@@ -43,6 +50,10 @@
                     </Keyboard>
                 </Entry.Keyboard>
             </Entry>
+            <Label Text="Passwords do not match" TextColor="Red" IsVisible="{Binding BadPassword}"
+                   HorizontalOptions="Center" VerticalOptions="Center"  ></Label>
+            <Label Text="Passwords must be at least 6 characters long" TextColor="Red" IsVisible="{Binding PasswordLength}"
+                   HorizontalOptions="Center" VerticalOptions="Center"  ></Label>
 
 
             <Button Text="Create Account" HorizontalOptions="Center" BackgroundColor="#7395AE"

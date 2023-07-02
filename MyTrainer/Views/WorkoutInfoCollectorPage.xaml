@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MyTrainer.ViewModels"
+    x:Class="MyTrainer.Views.WorkoutInfoCollectorPage"
+    BackgroundColor="#DFF5EE">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="LightSkyBlue" Padding="20" CornerRadius="0">
+                <Label Text="New Workout Plan" TextColor="White" HorizontalTextAlignment="Center" FontSize="24"></Label>
+            </Frame>
+
+            <!--GOALS-->
+            <Frame Padding="10" CornerRadius="0">
+                <Label Text="GOALS" HorizontalTextAlignment="Center" FontSize="20"></Label>
+            </Frame>
+            <Picker
+                    Title="Primary Goal"
+                    TitleColor="Black"
+                    FontSize="16"
+                    HorizontalTextAlignment="Center">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>I Want To Get Strong</x:String>
+                        <x:String>I Want To Lose Weight</x:String>
+                        <x:String>I Want To Gain Muscle</x:String>
+                        <x:String>I Want To Be Healthy</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker
+                    Title="Secondary Goal"
+                    TitleColor="Black"
+                    FontSize="16"
+                    HorizontalTextAlignment="Center">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>None</x:String>
+                        <x:String>I Want To Get Strong</x:String>
+                        <x:String>I Want To Lose Weight</x:String>
+                        <x:String>I Want To Gain Muscle</x:String>
+                        <x:String>I Want To Be Healthy</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!--FREQUENCY-->
+
+            <!--NEED TO FIGURE OUT HOW TO STORE THIS DATA-->
+            <!--<Frame Padding="10" CornerRadius="0">
+                <Label Text="FREQUENCY" HorizontalTextAlignment="Center" FontSize="20"></Label>
+            </Frame>
+            <ListView ItemsSource="{x:Static local:WorkoutCreatorViewModel.daysOfTheWeek}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text=""></Label>
+                                <CheckBox 
+                                    IsChecked="False" 
+                                    HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            
+            <!--<Picker
+                    Title="Select Days of The Week"
+                    TitleColor="Black"
+                    FontSize="16"
+                    HorizontalTextAlignment="Center"
+                    >
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1 Day</x:String>
+                        <x:String>2 Days</x:String>
+                        <x:String>3 Days</x:String>
+                        <x:String>4 Days</x:String>
+                        <x:String>5 Days</x:String>
+                        <x:String>6 Days</x:String>
+                        <x:String>7 Days</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>-->
+
+            <!--BODY PARTS-->
+
+            <!--LENGTH-->
+            <Frame Padding="10" CornerRadius="0">
+                <Label Text="LENGTH" HorizontalTextAlignment="Center" FontSize="20"></Label>
+            </Frame>
+            <Picker
+                    Title="Primary Goal"
+                    TitleColor="Black"
+                    FontSize="16"
+                    HorizontalTextAlignment="Center">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>I Want To Get Strong</x:String>
+                        <x:String>I Want To Lose Weight</x:String>
+                        <x:String>I Want To Gain Muscle</x:String>
+                        <x:String>I Want To Be Healthy</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker
+                    Title="Secondary Goal"
+                    TitleColor="Black"
+                    FontSize="16"
+                    HorizontalTextAlignment="Center">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>None</x:String>
+                        <x:String>I Want To Get Strong</x:String>
+                        <x:String>I Want To Lose Weight</x:String>
+                        <x:String>I Want To Gain Muscle</x:String>
+                        <x:String>I Want To Be Healthy</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <!--<Grid
+                ColumnDefinitions="Auto, Auto"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+
+                <CheckBox Grid.Row="0" Grid.Column="0"></CheckBox>
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="I Want To Gain Strength"
+                       VerticalTextAlignment="Center"></Label>
+                <CheckBox Grid.Row="1" Grid.Column="0"></CheckBox>
+                <Label Grid.Row="1" Grid.Column="1"
+                       Text="I Want To Build Muscle"
+                       VerticalTextAlignment="Center"></Label>
+                <CheckBox Grid.Row="2" Grid.Column="0"></CheckBox>
+                <Label Grid.Row="2" Grid.Column="1"
+                       Text="I Want To Lose Weight"
+                       VerticalTextAlignment="Center"></Label>
+                <CheckBox Grid.Row="3" Grid.Column="0"></CheckBox>
+                <Label Grid.Row="3" Grid.Column="1"
+                       Text="I Want To Be Healthy"
+                       VerticalTextAlignment="Center"></Label>
+            </Grid>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

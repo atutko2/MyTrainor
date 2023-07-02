@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using Firebase.Auth;
+using MyTrainer.StaticClasses;
 using MyTrainer.Views;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
@@ -14,7 +15,8 @@ namespace MyTrainer.ViewModels
         // To Do: Add Profile Model
 
         public ICommand LogoutCommand { get; }
-        public ICommand ShowExercises { get; }
+        public ICommand ShowExercisesCommand { get; }
+        public ICommand ShowProfileCommand { get; }
 
         private const string WebAPIKey = "AIzaSyA-md17IbC9MAZ50g5vUl5V1FsTUd6U0uw";
         private string email { get; set; }
@@ -25,7 +27,8 @@ namespace MyTrainer.ViewModels
             // Refreshs token and defines my commands
             GetProfileInformationAndRefreshToken();
             LogoutCommand = new Command(Logout);
-            ShowExercises = new Command(GetAllExercises);
+            ShowExercisesCommand = new Command(GetAllExercises);
+            ShowProfileCommand = new Command(PrintProfile);
         }
 
         // Display excercises page
@@ -41,6 +44,11 @@ namespace MyTrainer.ViewModels
         {
             Preferences.Remove("MyFirebaseRefreshToken");
             App.Current.MainPage = new NavigationPage(new LoginPage());
+        }
+
+        private void PrintProfile()
+        {
+            Console.WriteLine(Globals.MyProfile.FirstName);
         }
 
         // Retrieves users information from the DB and refreshs the token

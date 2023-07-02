@@ -8,7 +8,8 @@
         <Frame BackgroundColor="#246EE9" Padding="45" CornerRadius="0">
             <Label Text="Profile" TextColor="White" HorizontalTextAlignment="Center" FontSize="24"></Label>
         </Frame>
-        <Button Command="{Binding ShowExercises}" Text="Show All Exercises"></Button>
+        <Button Command="{Binding ShowExercisesCommand}" Text="Show All Exercises"></Button>
+        <Button Command="{Binding ShowProfileCommand}" Text="Write Profile for test"></Button>
         <Button Command="{Binding LogoutCommand}" Text="Logout"></Button>
         
 

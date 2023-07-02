@@ -3,7 +3,11 @@ using System.Windows.Input;
 using Xamarin.Forms;
 //using System.Security.Cryptography;
 using MyTrainer.Views;
+using MyTrainer.Views.CreateAccount;
 using Firebase.Auth;
+using MyTrainer.Models;
+using MyTrainer.StaticClasses;
+using Xamarin.Essentials;
 
 namespace MyTrainer.ViewModels
 {
@@ -36,9 +40,7 @@ namespace MyTrainer.ViewModels
             // Have the user sign into firebase
             var authProvider = new FirebaseAuthProvider(new FirebaseConfig(WebAPIKey));
             try
-            {
-                
-                
+            {              
                 // To DO:
                 // Before calling to the database, sanitize input
 
@@ -64,7 +66,7 @@ namespace MyTrainer.ViewModels
 
         }
 
-        async private void SignUp()
+        private async void SignUp()
         {
             await Application.Current.MainPage.Navigation.PushAsync(new SignUpPage());
         }

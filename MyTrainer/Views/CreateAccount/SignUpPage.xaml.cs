@@ -1,13 +1,13 @@
 ﻿using Xamarin.Forms;
 
-namespace MyTrainer.Views
+namespace MyTrainer.Views.CreateAccount
 {
     public partial class SignUpPage : ContentPage
     {
         public SignUpPage()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.SignUpViewModel();
+            BindingContext = new ViewModels.CreateAccount.SignUpViewModel();
         }
     }
 }

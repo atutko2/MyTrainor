@@ -24,14 +24,15 @@ namespace MyTrainer
             if (!string.IsNullOrEmpty(Preferences.Get("MyFirebaseRefreshToken", ""))){
                 Console.WriteLine(Preferences.Get("MyFirebaseRefreshToken", ""));
 
+                // Deserialize the stored profile
+                var content = Preferences.Get("MyProfile", "");
+                Globals.MyProfile = JsonConvert.DeserializeObject<Profile>(content);
+
                 MainPage = new NavigationPage(new MainPage());
             }
             else {
                 MainPage = new NavigationPage(new LoginPage());
             }
-
-            // This is how it was originally, changed to NavigationPage to allow for a login page
-            //MainPage = new MainPage();
         }
 
         private void FillAllExercises()
